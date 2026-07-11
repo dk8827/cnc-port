@@ -1,0 +1,950 @@
+#
+#	Command & Conquer(tm)
+#	Copyright 2025 Electronic Arts Inc.
+#
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 3 of the License, or
+#	(at your option) any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+#* $Header$
+#***********************************************************************************************
+#***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               ***
+#***********************************************************************************************
+#*                                                                                             *
+#*                 Project Name : Command & Conquer                                            *
+#*                                                                                             *
+#*                    File Name : MAKEFILE                                                     *
+#*                                                                                             *
+#*                   Programmer : Joe L. Bostic                                                *
+#*                                                                                             *
+#*                   Start Date : 03/02/95                                                     *
+#*                                                                                             *
+#*                  Last Update : March 2, 1995 [JLB]                                          *
+#*                                                                                             *
+#*---------------------------------------------------------------------------------------------*
+#* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - *
+
+.SILENT
+.OPTIMIZE
+.ERASE
+
+#---------------------------------------------------------------------------
+# Verify user's environment
+#---------------------------------------------------------------------------
+
+!ifndef %WWFLAT
+!error WWFLAT must be set to the root of the library directory.
+!else
+WWFLAT=$(%WWFLAT)
+!endif
+
+!ifndef %WATCOM
+#WATCOM=c:\projects\c&c\code\watcom
+!error WATCOM must be set to the Watcom root directory.
+!else
+WATCOM=$(%WATCOM)
+!endif
+
+!ifndef %CODEDIR
+#CODEDIR=c:\projects\code
+!error CODEDIR must be set to the root code directory.
+!else
+CODEDIR=$(%CODEDIR)
+!endif
+
+!ifndef %CDDIR
+!error CODEDIR must be set.
+#CDDIR=..\cd
+!else
+CDDIR=$(%CDDIR)
+!endif
+
+!ifndef %VQDIR
+#VQDIR=c:\VQA
+!error VQDIR must be set to the root VQ directory.
+!else
+VQDIR=$(%VQDIR)
+!endif
+
+#---------------------------------------------------------------------------
+# Path macros: one path for each file type.
+#  These paths are used to tell make where to find/put each file type.
+#---------------------------------------------------------------------------
+.asm:  .
+.c:    .
+.cpp:  .
+.h:    .
+.obj:  $(%WWOBJ)obj
+.lib:  $(WWFLAT)\lib
+.exe:  ..\run
+
+
+#===========================================================================
+# Compiler and assembler flags.
+#===========================================================================
+CC_CFG = /i=$(VQDIR)\include					# Includes player (VQ) directory.
+CC_CFG += /i=$(WWFLAT)\INCLUDE			# Normal library include directory.
+CC_CFG += /i=$(WATCOM)\H\nt					# Normal Watcom include directory.
+CC_CFG += /i=$(WATCOM)\H						# Normal Watcom include directory.
+CC_CFG += /i=..\gcl510\H					# Includes Greenleaf headers.
+
+VCT_CFG = /i=$(VQDIR)\include					# Includes player (VQ) directory.
+VCT_CFG += /i=$(WWFLAT)\INCLUDE			# Normal library include directory.
+VCT_CFG += /i=$(WATCOM)\H\nt					# Normal Watcom include directory.
+VCT_CFG += /i=$(WATCOM)\H						# Normal Watcom include directory.
+VCT_CFG += /i=..\gcl510\H					# Includes Greenleaf headers.
+
+#CC_CFG += /DDOS4G								# Must be defined for Greenleaf
+#CC_CFG += /DGF_WATCOM_S						# Must be defined for Greenleaf with /3s
+#CC_CFG += /d3									# Debugging information.
+#CC_CFG += /d1									# Debugging information.
+#CC_CFG += /of+									# Generate traceable stack frames.
+#CC_CFG += /DOPTION=$(%OPTION)				# Optional option define.
+#CC_CFG += /zp1									# Pack structures on byte boundary.
+#CC_CFG += /5s									# Pentium optimized stack calling conventions.
+#CC_CFG += /xs									# Exception handling enabled.
+#CC_CFG += /s									# Remove stack check calls.
+#CC_CFG += /j									# char is now signed.
+#CC_CFG += /fh=$(%WWOBJ)conquer.pch						# Use precompiled headers.
+#CC_CFG += /we									# Treat all warnings as errors.
+#CC_CFG += /w8									# Most warnings enabled.
+#CC_CFG += /ri									# char and shorts are returned as int.
+CC_CFG += /zq									# Operate quietly.
+#CC_CFG += /zm									# Each routine to be in its own segment.
+#CC_CFG += /zld									# Disable autodependency information in object file.
+
+#CC_CFG += /bm									# build target is a multi-thread environment
+#CC_CFG += /mf									# flat model
+#CC_CFG += /ze									# enable language extensions
+#CC_CFG += /zw									# create windows code
+
+#CC_CFG += /od									# *** Disable all optimizations ***
+#CC_CFG += /ol									# Loop optimizations enabled.
+#CC_CFG += /or									# Reorder instructions for best pipeline usage.
+#CC_CFG += /oe									# Inline is enabled.
+#CC_CFG += /oi									# Expand intrisic functions inline.
+#CC_CFG += /on									# Allow numerically unstable operations.
+#CC_CFG += /oo									# Compile even if low on memory (i.e. less than 64meg).
+#CC_CFG += /oa									# Relax aliasing constraints.
+
+#CC_CFG += -bt=NT /i=q:\include -j -os -zz -W3 -d1 /5 -s -fh=c:\projects\code\conquer.pch
+#CC_CFG += -bt=NT /i=q:\include -j -otexan -ol+ -zz -W3 -d1 /5 -s -fh=c:\projects\code\conquer.pch
+#CC_CFG += -bt=NT /i=q:\include -zq -j -zz -W3 -d1 /5 -s -fh=c:\projects\code\conquer.pch
+CC_CFG += -bt=NT /i=q:\include  -j -W3 -zz -d1 -otxan -ol+ /5 -s -fh=d:\projects\ccgold\code\conquer.pch
+#CC_CFG += -bt=NT /i=q:\include -j -W3 -zz -d2 -od /5 -s -fh=c:\projects\code\conquer.pch
+#CC_CFG += -bt=95 /i=q:\include -j -W3 -hc -od -d3 /4 -s
+#CC_CFG += -bt=NT /i=q:\include -j -W3 -d1 -orilt /4 -s -fh=c:\projects\code\conquer.pch -fhq
+#CC_CFG += -bt=NT /i=q:\include -j -W3 -d2 -orilt /4 -s -ep -ee -fh=c:\projects\code\conquer.pch -fhq
+
+ASM_CFG = /i$(WWFLAT)\INCLUDE				# Include directory.
+ASM_CFG += /zd									# Debugging information line numbers.
+ASM_CFG += /t									# Quiet operation.
+ASM_CFG += /m									# Allow multiple passes.
+ASM_CFG += /w+									# Enable maximum warnings.
+ASM_CFG += /jJUMPS							# Enable jump optimizations.
+ASM_CFG += /ml									# Case sensitivity on code.
+#ASM_CFG += /zi								# Full debugging information.
+
+
+VCT_CFG += -bt=NT /i=q:\include -j -W3 -zz -d2 -od /5 -s -fh=d:\projects\ccgold\code\conquer.pch
+
+
+#---------------------------------------------------------------------------
+# Implicit rules
+# Compiler:
+# 	($< = full dependent with path)
+# Assembler:
+# 	output obj's are constructed from .obj: & the $& macro
+# 	($< = full dependent with path)
+# 	tasm's cfg file is not invoked as a response file.
+#---------------------------------------------------------------------------
+
+.c.obj:#.AUTODEPEND
+	echo Compiling $<
+	*watcom\wcc $(C_CFG) -fo$(%WWOBJ)obj\$^. $<
+
+.cpp.obj: #.AUTODEPEND
+	echo Compiling $<
+!ifdef %NETWORK
+	f:\projects\c&c95\slaves\NETEXEC /v f:\projects\c&c95\slaves\$(%NETWHO)c $^&
+	if exist $(%CCNETDIR)\code\netmake.err %abort
+!else
+	*$(WATCOM)\binnt\wpp386 $(CC_CFG) -fo$(%WWOBJ)obj\$^. $(CODEDIR)\$<
+!endif
+
+.asm.obj:
+	echo Assembling $<
+!ifdef %NETWORK
+	f:\projects\c&c95\slaves\NETEXEC /v f:\projects\c&c95\slaves\$(%NETWHO)a $^&
+!else
+	tasm $(ASM_CFG) $<, $(%WWOBJ)obj\$^.
+!endif
+
+
+
+
+#---------------------------------------------------------------------------
+# Project-dependent variables
+#---------------------------------------------------------------------------
+OBJECTS = &
+	SUPER.OBJ &
+	AADATA.OBJ &
+	WINSTUB.OBJ &
+	WINASM.OBJ &
+	ABSTRACT.OBJ &
+	ADATA.OBJ &
+	AIRCRAFT.OBJ &
+	ANIM.OBJ &
+	AUDIO.OBJ &
+	BASE.OBJ &
+	BBDATA.OBJ &
+	BDATA.OBJ &
+	BUILDING.OBJ &
+	BULLET.OBJ &
+	CARGO.OBJ &
+	CCFILE.OBJ &
+	CDATA.OBJ &
+	CDFILE.OBJ &
+	CELL.OBJ &
+	CHECKBOX.OBJ &
+	CHEKLIST.OBJ &
+	COLRLIST.OBJ &
+	COMBAT.OBJ &
+	COMBUF.OBJ &
+	CONFDLG.OBJ &
+	CONNECT.OBJ &
+	CONQUER.OBJ &
+	CONST.OBJ &
+	CONTROL.OBJ &
+	COORD.OBJ &
+	CREDITS.OBJ &
+	CREW.OBJ &
+	DEBUG.OBJ &
+	DIAL8.OBJ &
+	DIALOG.OBJ &
+	DISPLAY.OBJ &
+	DOOR.OBJ &
+	DRIVE.OBJ &
+	EDIT.OBJ &
+	EVENT.OBJ &
+	ENDING.OBJ &
+	EXPAND.OBJ &
+	FACING.OBJ &
+	FACTORY.OBJ &
+	FINDPATH.OBJ &
+	FLASHER.OBJ &
+	FLY.OBJ &
+	FOOT.OBJ &
+	FUSE.OBJ &
+	GADGET.OBJ &
+	GAMEDLG.OBJ &
+	GAUGE.OBJ &
+	GLOBALS.OBJ &
+	GOPTIONS.OBJ &
+	GSCREEN.OBJ &
+	HDATA.OBJ &
+	HEAP.OBJ &
+	HELP.OBJ &
+	HOUSE.OBJ &
+	IDATA.OBJ &
+	INFANTRY.OBJ &
+	INI.OBJ &
+	INIT.OBJ &
+	INTERNET.OBJ &
+	INTERPAL.OBJ &
+	INTRO.OBJ &
+	IOMAP.OBJ &
+	IOOBJ.OBJ &
+	IPX.OBJ &
+	IPXADDR.OBJ &
+	IPXCONN.OBJ &
+	IPXGCONN.OBJ &
+	IPXMGR.OBJ &
+	IPX95.OBJ &
+	JSHELL.OBJ &
+	KEYFBUFF.OBJ &
+	KEYFRAME.OBJ &
+	LAYER.OBJ &
+	LINK.OBJ &
+	LIST.OBJ &
+	LOADDLG.OBJ &
+	LOGIC.OBJ &
+	MAP.OBJ &
+	MAPEDDLG.OBJ &
+	MAPEDIT.OBJ &
+	MAPEDPLC.OBJ &
+	MAPEDTM.OBJ &
+	MAPSEL.OBJ &
+	MENUS.OBJ &
+	MISSION.OBJ &
+	MIXFILE.OBJ &
+	MOUSE.OBJ &
+	MPLAYER.OBJ &
+	MSGBOX.OBJ &
+	MSGLIST.OBJ &
+	NETDLG.OBJ &
+	NOSEQCON.OBJ &
+	NULLCONN.OBJ &
+	NULLDLG.OBJ &
+	NULLMGR.OBJ &
+	OBJECT.OBJ &
+	ODATA.OBJ &
+	OPTIONS.OBJ &
+	OVERLAY.OBJ &
+	POWER.OBJ &
+	PROFILE.OBJ &
+	QUEUE.OBJ &
+	RADAR.OBJ &
+	RADIO.OBJ &
+	RAND.OBJ &
+	REINF.OBJ &
+	SAVELOAD.OBJ &
+	SCENARIO.OBJ &
+	SCORE.OBJ &
+	SCROLL.OBJ &
+	SDATA.OBJ &
+	SHAPEBTN.OBJ &
+	SIDEBAR.OBJ &
+	SLIDER.OBJ &
+	SMUDGE.OBJ &
+	SOUNDDLG.OBJ &
+	SPECIAL.OBJ &
+	STARTUP.OBJ &
+	SUPPORT.OBJ &
+	TAB.OBJ &
+	TARCOM.OBJ &
+	TARGET.OBJ &
+	TCPIP.OBJ &
+	TDATA.OBJ &
+	TEAM.OBJ &
+	TEAMTYPE.OBJ &
+	TECHNO.OBJ &
+	TEMPLATE.OBJ &
+	TERRAIN.OBJ &
+	TEXTBTN.OBJ &
+	THEME.OBJ &
+	TOGGLE.OBJ &
+	TRIGGER.OBJ &
+	TURRET.OBJ &
+	TXTLABEL.OBJ &
+	TXTPRNT.OBJ &
+	UDATA.OBJ &
+	UNIT.OBJ &
+	VECTOR.OBJ &
+	VISUDLG.OBJ &
+	UTRACKER.OBJ &
+	PACKET.OBJ &
+	FIELD.OBJ &
+	STATS.OBJ &
+	CCDDE.OBJ &
+	DDE.OBJ &
+#	ALLOC.OBJ
+#	DESCDLG.OBJ &
+#	COORDA.OBJ &
+
+PROJ_LIBS =# &
+        #wwflat32.lib
+
+VQ_LIBS = &
+	vqa32wp.lib &
+	vqm32wp.lib
+
+GCL_LIBS = &
+	gclfr3s.lib
+
+
+############################################################################
+# Pre-compilation process. Move old files to backup directory and switch
+# to monochrome screen.
+.BEFORE
+!ifndef %SLAVE
+#	mode mono
+!endif
+	-if exist $(%WWOBJ)*.pch del $(%WWOBJ)*.pch
+	-if exist $(%CCNETDIR)\code\netmake.err del $(%CCNETDIR)\code\netmake.err
+	-if exist *.bak move *.bak bak
+
+# Switch back to normal screen at compilation end.
+.AFTER
+!ifndef %SLAVE
+#	mode co80
+#	ncc /50
+!endif
+
+# Switch back to normal screen if there was an error.
+.ERROR
+!ifndef %SLAVE
+#	mode co80
+#	ncc /50
+!endif
+
+
+#############################################################################
+# Default target
+all:	conquer.exe
+
+
+#############################################################################
+# Builds the stub replacement program.
+CWSTUB.OBJ: CWSTUB.C
+	*watcom\wcc /i=watcom\h /dQUIET /dVMM /ms /zQ -fo$(%WWOBJ)obj\$^. $<
+
+CWSTUB.EXE: CWSTUB.OBJ
+	*watcom\wlink system dos file $(%WWOBJ)obj\cwstub.obj name cwstub.exe option quiet library watcom\lib286\dos\clibs.lib, watcom\lib286\math87s.lib, watcom\lib286\dos\emu87.lib
+
+
+#############################################################################
+# Build the EXE
+conquer.exe: $(OBJECTS) obj\mmx.obj conquer.lnk $(WWFLAT)\lib\win32lib.lib $(VQDIR)\lib\vqa32wp.lib $(VQDIR)\lib\vqm32wp.lib
+
+	 Echo "conquer.exe" linking phase.
+!ifdef %NETWORK
+	 echo Waiting for objects...
+	 for %index in ($(OBJECTS)) do f:\projects\c&c95\slaves\WAITFILE $(%CCNETDIR)\code\obj\%index
+	 ndos.com /c copy $(%CCNETDIR)\code\obj\*.obj $(%CCLOCALDIR)\code\obj /U
+!endif
+	 echo Linking the executable.
+	 $(WATCOM)\binnt\wlink name ..\run\$@ @conquer.lnk
+	 $(WATCOM)\binnt\WRC cc_icon ..\run\conquer.exe
+	 Echo "conquer.exe" executable completed.
+!ifdef %WWOBJ
+	 xcopy /M e:\obj\*.* c:\projects\c&c\code\obj
+!endif
+#	 watcom\wlink $(LINK_CFG) name ..\run\$@ @conquer.lnk
+
+#############################################################################
+# This creates the linker command file.
+conquer.lnk : makefile
+	%create $^@
+	%append $^@ system win95
+	%append $^@ option stack=128k
+	%append $^@ option redefsok
+	%append $^@ option quiet
+	%append $^@ option map
+#	%append $^@ option cache
+	%append $^@ option eliminate
+	%append $^@ option caseexact
+#	%append $^@ option stub=cwstub.exe
+#	%append $^@ debug all
+	%append $^@ debug all
+	for %index in ($(OBJECTS))  do %append $^@ file $(%WWOBJ)obj\%index
+	%append $^@ file $(%WWOBJ)obj\mmx.obj
+#	%append $^@ file $(%WWOBJ)obj\vector.obj
+#	for %index in ($(PROJ_LIBS)) do %append $^@ library $(WWFLAT)\lib\%index
+#	for %index in ($(VQ_LIBS)) do %append $^@ library ..\vq\lib\%index
+#	for %index in ($(GCL_LIBS)) do %append $^@ library ..\gcl510\w10\%index
+	%append $^@ library $(WWFLAT)\lib\ddraw.lib
+	%append $^@ library $(WWFLAT)\lib\dsound.lib
+	%append $^@ library $(WWFLAT)\lib\keyboard.lib
+	%append $^@ library $(WWFLAT)\lib\win32lib.lib
+	%append $^@ library $(VQDIR)\lib\vqa32wp.lib
+	%append $^@ library $(VQDIR)\lib\vqm32wp.lib
+	%append $^@ library ipx\wwipx32.lib
+
+
+
+##############################################################################
+# Creates a symbol-less executable and copies it to the net cd directories
+cd: .SYMBOLIC
+	-wstrip ..\run\conquer.exe ..\run\c&c95.exe
+	-copy ..\run\c&c95.exe f:\projects\c&c95\setup\data
+
+
+##################################################################
+#
+# The MMX stuff requires MASM 6.11d so it needs its own rule
+#
+obj\mmx.obj: mmx.asm mmx.inc
+	d:\masm611\bin\ml /I. /c /Cx /Zd /Cp /Flmmx.txt /Sc /Foobj\mmx.obj mmx.asm
+
+
+
+
+#############################################################
+# Creates a bound executable in the install directory.
+bind: .SYMBOLIC
+	-copy ..\run\conquer.exe ..\run\temp.exe
+	-wstrip ..\run\temp.exe
+	-watcom\4gwbind watcom\4gwpro.exe ..\run\temp.exe ..\cd1\install\c&c.exe -f
+	-copy ..\cd1\install\c&c.exe ..\cd2\install /u /v
+	-del ..\run\temp.exe
+
+
+#############################################################
+# Update source and art to network.
+update: bind .SYMBOLIC
+!ifdef %CDDIR
+	-copy ..\cd1\*.* $(CDDIR)cd1 /v /u /s
+	-copy ..\cd2\*.* $(CDDIR)cd2 /v /u /s
+	-copy $(CDDIR)cd1\*.* f:\projects\c&c\cd\cd1 /v /u /s
+	-copy $(CDDIR)cd2\*.* f:\projects\c&c\cd\cd2 /v /u /s
+!else
+	-copy ..\cd1\*.* f:\projects\c&c\cd\cd1 /v /u /s
+	-copy ..\cd2\*.* f:\projects\c&c\cd\cd2 /v /u /s
+!endif
+	-copy watcom\dos4gw.exe f:\projects\c&c\playtest
+	-copy ..\run\conquer.exe f:\projects\c&c\playtest /u /v
+	-copy conquer.map f:\projects\c&c\playtest /u /v
+	-mkdir f:\projects\c&c\playtest\%_DATE
+	-copy ..\run\conquer.exe f:\projects\c&c\playtest\%_DATE /u /v
+	-copy conquer.map f:\projects\c&c\playtest\%_DATE /u /v
+	-copy ..\art\ingame\*.* f:\projects\c&c\art\ingame /u /v /s
+	-copy *.* f:\projects\c&c\code /v /s /u
+
+#############################################################################
+# Explicit rules to build the master zip files (used by Codewrite merge).
+BILL_R.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c\bill_r.zip
+	-pkzip -p -u -x@pkzip.dat f:\projects\c&c\bill_r.zip *.* eng\*.*
+
+MARIA_L.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c\maria_l.zip
+	-pkzip -p -u -x@pkzip.dat f:\projects\c&c\maria_l.zip *.* eng\*.*
+
+BARRY_G.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c\barry_g.zip
+	-pkzip -p -u -x@pkzip.dat f:\projects\c&c\barry_g.zip *.* eng\*.*
+
+PHIL_G.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c95\phil_g.zip
+	-pkzip -p -u -x@pkzip.dat f:\projects\c&c95\phil_g.zip *.*
+
+win32lib.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c95\win32lib.zip
+	-pkzip -p -r f:\projects\c&c95\win32lib.zip d:\win32lib\*.*
+
+DAVID_D.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c\david_d.zip
+	-pkzip -p -u -x@pkzip.dat f:\projects\c&c\david_d.zip *.* eng\*.*
+
+BILL_P.ZIP: pkzip.dat .SYMBOLIC
+	-del f:\projects\c&c\bill_p.zip
+	-pkzip -p -u -x@pkzip.dat f:\projects\c&c\bill_p.zip *.* eng\*.*
+
+# Special "mega-zip" process.
+JOE_B.ZIP: pkzip.dat .SYMBOLIC
+	-pkzip -rp -u -xcps\*.* -x@pkzip.dat f:\projects\c&c\joe_b.zip
+
+
+#############################################################################
+# Rebuilds the master zip control file. This is used by the zip process.
+PKZIP.DAT: makefile .SYMBOLIC
+	%create $^@
+	%append $^@ *.000
+	%append $^@ *.@@@
+	%append $^@ *.bak
+	%append $^@ *.bat
+	%append $^@ *.cfg
+	%append $^@ *.dat
+	%append $^@ *.def
+	%append $^@ *.doc
+	%append $^@ *.dsw
+	%append $^@ *.err
+	%append $^@ *.ewp
+	%append $^@ *.ext
+	%append $^@ *.i
+	%append $^@ *.ide
+	%append $^@ *.lnk
+	%append $^@ *.log
+	%append $^@ *.lst
+	%append $^@ *.mac
+	%append $^@ *.map
+	%append $^@ *.mk
+	%append $^@ *.mk1
+	%append $^@ *.obj
+	%append $^@ *.out
+	%append $^@ *.pch
+	%append $^@ *.pfs
+	%append $^@ *.pif
+	%append $^@ *.pjt
+	%append $^@ *.prf
+	%append $^@ *.pro
+	%append $^@ *.ptg
+	%append $^@ *.rc
+	%append $^@ *.rep
+	%append $^@ *.rpt
+	%append $^@ *.rst
+	%append $^@ *.sym
+	%append $^@ *.tag
+	%append $^@ *.td
+	%append $^@ *.td
+	%append $^@ *.tgt
+	%append $^@ *.tmp
+	%append $^@ *.tr
+	%append $^@ *.tr
+	%append $^@ *.vec
+	%append $^@ *.wpj
+	%append $^@ *.zip
+	%append $^@ state.rst
+
+
+#---------------------------------------------------------------------------
+# Dependency macros (makes defining dependencies easier)
+#---------------------------------------------------------------------------
+GENERAL_H =		defines.h function.h externs.h conquer.h vector.h heap.h &
+			debug.h jshell.h compat.h
+
+TECHNO_H =		facing.h techno.h mission.h stage.h cargo.h object.h abstract.h
+
+UNIT_H =		unit.h tarcom.h turret.h drive.h foot.h radio.h $(TECHNO_H)
+
+INFANTRY_H =	infantry.h foot.h radio.h $(TECHNO_H)
+
+AIRCRAFT_H =	aircraft.h fly.h radio.h $(TECHNO_H)
+
+BUILDING_H =	building.h radio.h $(TECHNO_H)
+
+BULLET_H =		bullet.h fly.h fuse.h object.h abstract.h
+
+OBJ_H =		$(UNIT_H) $(INFANTRY_H) $(AIRCRAFT_H) $(BUILDING_H) $(BULLET_H)
+
+MAP_H =		base.h mapedit.h mouse.h scroll.h help.h tab.h power.h sidebar.h &
+			radar.h display.h map.h gscreen.h cell.h
+
+GADGET_H =		textbtn.h shapebtn.h slider.h gauge.h dial8.h edit.h &
+			toggle.h list.h cheklist.h control.h gadget.h link.h
+
+FILE_H =		ccfile.h cdfile.h mixfile.h rawfile.h wwfile.h link.h
+
+TEAM_H =		team.h teamtype.h trigger.h
+
+IPX_H =		ipx.h ipxaddr.h
+
+NET_H =		combuf.h connect.h connmgr.h ipx.h ipxaddr.h ipxconn.h ipxgconn.h &
+				ipxmgr.h noseqcon.h nullconn.h nullmgr.h
+
+MISC_H =		ftimer.h logic.h score.h theme.h event.h queue.h special.h
+
+#---------------------------------------------------------------------------
+# Dependencies (This is not totally accurate; if you're not sure, rebuild
+# everything!)
+#---------------------------------------------------------------------------
+aadata.obj:		aadata.cpp $(GENERAL_H) type.h
+
+winstub.obj:		winstub.cpp tcpip.h $(GENERAL_H)
+
+winasm.obj:		winasm.asm
+
+abstract.obj:	abstract.cpp $(GENERAL_H) abstract.h
+
+adata.obj:		adata.cpp $(GENERAL_H) type.h
+
+aircraft.obj:	aircraft.cpp $(GENERAL_H) $(AIRCRAFT_H)
+
+anim.obj:		anim.cpp $(GENERAL_H) anim.h stage.h object.h
+
+audio.obj:		audio.cpp $(GENERAL_H) audio.h
+
+base.obj:		base.cpp $(GENERAL_H) type.h
+
+bbdata.obj:		bbdata.cpp $(GENERAL_H) type.h
+
+bdata.obj:		bdata.cpp $(GENERAL_H) type.h
+
+building.obj:	building.cpp $(GENERAL_H) $(BUILDING_H)
+
+bullet.obj:		bullet.cpp $(GENERAL_H) $(BULLET_H)
+
+cargo.obj:		cargo.cpp $(GENERAL_H) $(TECHNO_H) cargo.h
+
+ccfile.obj:		ccfile.cpp $(GENERAL_H) $(FILE_H)
+
+cdata.obj:		cdata.cpp $(GENERAL_H) type.h
+
+cdfile.obj:		cdfile.cpp $(GENERAL_H) $(FILE_H)
+
+cell.obj:		cell.cpp $(GENERAL_H) $(MAP_H)
+
+checkbox.obj:	checkbox.cpp $(GENERAL_H) $(GADGET_H)
+
+cheklist.obj:	cheklist.cpp $(GENERAL_H) $(GADGET_H)
+
+colrlist.obj:	colrlist.cpp $(GENERAL_H) $(GADGET_H)
+
+combat.obj:		combat.cpp $(GENERAL_H)
+
+combuf.obj:		combuf.cpp $(GENERAL_H) combuf.h
+
+confdlg.obj:	confdlg.cpp $(GENERAL_H) $(GADGET_H)
+
+connect.obj:	connect.cpp $(GENERAL_H) connect.h combuf.h
+
+conquer.obj:	conquer.cpp $(GENERAL_H) $(MISC_H) $(OBJ_H) tcpip.h ccdde.h
+
+const.obj:		const.cpp $(GENERAL_H)
+
+control.obj:	control.cpp $(GENERAL_H) $(GADGET_H)
+
+coord.obj:		coord.cpp $(GENERAL_H)
+
+coorda.obj:		coorda.asm
+
+credits.obj:	credits.cpp $(GENERAL_H) credits.h
+
+crew.obj:		crew.cpp $(GENERAL_H) crew.h
+
+debug.obj:		debug.cpp $(GENERAL_H) debug.h
+
+deldlg.obj:		deldlg.cpp $(GENERAL_H) $(GADGET_H)
+
+#descdlg.obj:	descdlg.cpp $(GENERAL_H) $(GADGET_H)
+
+dial8.obj:		dial8.cpp $(GENERAL_H) $(GADGET_H)
+
+dialog.obj:		dialog.cpp $(GENERAL_H)
+
+display.obj:	display.cpp $(GENERAL_H) $(MAP_H)
+
+door.obj:		door.cpp $(GENERAL_H)
+
+drive.obj:		drive.cpp $(GENERAL_H) $(TECHNO_H)
+
+edit.obj:		edit.cpp $(GENERAL_H) $(GADGET_H)
+
+event.obj:		event.cpp $(GENERAL_H) $(MISC_H) ccdde.h
+
+ending.obj:		ending.cpp $(GENERAL_H) $(MISC_H)
+
+expand.obj:		expand.cpp $(GENERAL)
+
+facing.obj:		facing.cpp $(GENERAL_H) facing.h
+
+factory.obj:	factory.cpp $(GENERAL_H) factory.h
+
+findpath.obj:	findpath.cpp $(GENERAL_H)
+
+flasher.obj:	flasher.cpp $(GENERAL_H) flasher.h
+
+fly.obj:			fly.cpp $(GENERAL_H) fly.h
+
+foot.obj:		foot.cpp $(GENERAL_H) $(INFANTRY_H)
+
+fuse.obj:		fuse.cpp $(GENERAL_H) fuse.h
+
+gadget.obj:		gadget.cpp $(GENERAL_H) $(GADGET_H)
+
+gamedlg.obj:	gamedlg.cpp $(GENERAL_H) $(GADGET_H)
+
+gauge.obj:		gauge.cpp $(GENERAL_H) $(GADGET_H)
+
+globals.obj:	globals.cpp $(GENERAL_H)
+
+goptions.obj:	goptions.cpp $(GENERAL_H) $(GADGET_H)
+
+gscreen.obj:	gscreen.cpp $(GENERAL_H) $(MAP_H)
+
+hdata.obj:		hdata.cpp $(GENERAL_H) type.h
+
+heap.obj:		heap.cpp $(GENERAL_H) $(MISC_H)
+
+help.obj:		help.cpp $(GENERAL_H) $(MAP_H)
+
+house.obj:		house.cpp $(GENERAL_H) house.h
+
+idata.obj:		idata.cpp $(GENERAL_H) type.h
+
+infantry.obj:	infantry.cpp $(GENERAL_H) $(INFANTRY_H)
+
+ini.obj:			ini.cpp $(GENERAL_H) $(MISC_H)
+
+init.obj:		init.cpp $(GENERAL_H) $(MISC_H) $(OBJ_H) tcpip.h ccdde.h
+
+internet.obj:		internet.cpp $(GENERAL_H) $(MISC_H) tcpip.h ccdde.h
+
+interpal.obj:		interpal.cpp $(GENERAL_H) $(MISC_H)
+
+intro.obj:		intro.cpp $(GENERAL_H) $(MISC_H)
+
+iomap.obj:		iomap.cpp $(GENERAL_H) $(MAP_H) $(FILE_H)
+
+ioobj.obj:		ioobj.cpp $(GENERAL_H) $(FILE_H) $(OBJ_H)
+
+ipx.obj:			ipx.cpp $(GENERAL_H) $(IPX_H)
+
+ipxaddr.obj:	ipxaddr.cpp $(GENERAL_H) $(IPX_H)
+
+ipxconn.obj:	ipxconn.cpp $(GENERAL_H) $(NET_H)
+
+ipxgconn.obj:	ipxgconn.cpp $(GENERAL_H) $(NET_H)
+
+ipxmgr.obj:		ipxmgr.cpp $(GENERAL_H) $(NET_H)
+
+ipx95.obj:	ipx95.cpp $(GENERAL_H) $(NET_H)
+
+jshell.obj:		jshell.cpp $(GENERAL_H) $(MISC_H)
+
+keyfbuff.obj:	keyfbuff.asm
+
+keyframe.obj:		keyframe.cpp $(GENERAL_H)
+
+layer.obj:		layer.cpp $(GENERAL_H) $(MISC_H)
+
+link.obj:		link.cpp $(GENERAL_H) link.h
+
+list.obj:		list.cpp $(GENERAL_H) $(GADGET_H)
+
+loaddlg.obj:	loaddlg.cpp $(GENERAL_H) $(GADGET_H)
+
+logic.obj:		logic.cpp $(GENERAL_H) $(MISC_H)
+
+map.obj:			map.cpp $(GENERAL_H) $(MAP_H)
+
+mapsel.obj:		mapsel.cpp $(GENERAL_H)
+
+mapeddlg.obj:	mapeddlg.cpp $(GENERAL_H) $(MAP_H) $(OBJ_H)
+
+mapedit.obj:	mapedit.cpp mapedsel.cpp $(GENERAL_H) $(MAP_H) $(OBJ_H)
+
+mapedplc.obj:	mapedplc.cpp $(GENERAL_H) $(MAP_H) $(OBJ_H)
+
+mapedtm.obj:	mapedtm.cpp $(GENERAL_H) $(MAP_H) $(OBJ_H)
+
+menus.obj:		menus.cpp $(GENERAL_H) ccdde.h
+
+mission.obj:	mission.cpp $(GENERAL_H) mission.h stage.h cargo.h object.h abstract.h
+
+mixfile.obj:	mixfile.cpp $(GENERAL_H) $(FILE_H)
+
+monoc.obj:		monoc.cpp $(GENERAL_H)
+
+mouse.obj:		mouse.cpp $(GENERAL_H) $(MAP_H)
+
+mplayer.obj:	mplayer.cpp tcpip.h $(GENERAL_H)
+
+msgbox.obj:		msgbox.cpp $(GENERAL_H) $(GADGET_H)
+
+msglist.obj:	msglist.cpp $(GENERAL_H) $(GADGET_H)
+
+netdlg.obj:		netdlg.cpp $(GENERAL_H) $(GADGET_H) $(NET_H)
+
+noseqcon.obj:	noseqcon.cpp $(GENERAL_H) noseqcon.h connect.h combuf.h
+
+nullconn.obj:	nullconn.cpp $(GENERAL_H) nullconn.h noseqcon.h connect.h combuf.h tcpip.h
+
+nulldlg.obj:	nulldlg.cpp $(GENERAL_H) nullmgr.h nullconn.h connmgr.h noseqcon.h connect.h combuf.h tcpip.h
+
+nullmgr.obj:    nullmgr.cpp $(GENERAL_H) nullmgr.h nullconn.h connmgr.h noseqcon.h connect.h combuf.h tcpip.h
+
+object.obj:		object.cpp $(GENERAL_H) object.h abstract.h
+
+odata.obj:		odata.cpp $(GENERAL_H) type.h
+
+options.obj:	options.cpp $(GENERAL_H) $(GADGET_H)
+
+overlay.obj:	overlay.cpp $(GENERAL_H) overlay.h object.h
+
+power.obj:		power.cpp $(GENERAL_H) $(MAP_H)
+
+profile.obj:	profile.cpp $(GENERAL_H)
+
+queue.obj:		queue.cpp $(GENERAL_H) $(MISC_H) tcpip.h
+
+rand.obj:		rand.cpp $(GENERAL_H)
+
+radar.obj:		radar.cpp $(GENERAL_H) $(MAP_H)
+
+radio.obj:		radio.cpp $(GENERAL_H) $(TECHNO_H)
+
+reinf.obj:		reinf.cpp $(GENERAL_H) $(MISC_H) $(TEAM_H)
+
+savedlg.obj:	savedlg.cpp $(GENERAL_H) $(GADGET_H)
+
+saveload.obj:	saveload.cpp $(GENERAL_H) $(MISC_H)
+
+scenario.obj:	scenario.cpp $(GENERAL_H) $(MISC_H)
+
+score.obj:		score.cpp $(GENERAL_H)
+
+scroll.obj:		scroll.cpp $(GENERAL_H) $(MAP_H)
+
+sdata.obj:		sdata.cpp $(GENERAL_H) type.h
+
+shapebtn.obj:	shapebtn.cpp $(GENERAL_H) $(GADGET_H)
+
+sidebar.obj:	sidebar.cpp $(GENERAL_H) $(MAP_H)
+
+slider.obj:		slider.cpp $(GENERAL_H) $(GADGET_H)
+
+smudge.obj:		smudge.cpp $(GENERAL_H) smudge.h object.h
+
+sounddlg.obj:	sounddlg.cpp $(GENERAL_H) $(GADGET_H) sounddlg.h
+
+special.obj:	special.cpp $(GENERAL_H) $(GADGET_H) special.h
+
+startup.obj:	startup.cpp $(GENERAL_H) ccdde.h
+
+stuff.obj:		stuff.cpp $(GENERAL_H) $(MISC_H)
+
+support.obj:	support.asm
+
+super.obj:		super.cpp $(GENERAL_H) $(MISC_H)
+
+tab.obj:			tab.cpp $(GENERAL_H) $(MAP_H)
+
+tarcom.obj:		tarcom.cpp $(GENERAL_H) $(UNIT_H)
+
+target.obj:		target.cpp $(GENERAL_H) target.h
+
+tcpip.obj:		tcpip.cpp $(GENERAL_H) tcpip.h
+
+tdata.obj:		tdata.cpp $(GENERAL_H) type.h
+
+team.obj:		team.cpp $(GENERAL_H) $(TEAM_H)
+
+teamtype.obj:	teamtype.cpp $(GENERAL_H) $(TEAM_H)
+
+techno.obj:		techno.cpp $(GENERAL_H) $(TECHNO_H)
+
+template.obj:	template.cpp $(GENERAL_H) template.h object.h
+
+terrain.obj:	terrain.cpp $(GENERAL_H) terrain.h stage.h object.h
+
+textbtn.obj:	textbtn.cpp $(GENERAL_H) $(GADGET_H)
+
+theme.obj:		theme.cpp $(GENERAL_H) theme.h
+
+toggle.obj:		toggle.cpp $(GENERAL_H) $(GADGET_H)
+
+trigger.obj:	trigger.cpp $(GENERAL_H) $(TEAM_H)
+
+turret.obj:		turret.cpp $(GENERAL_H) $(UNIT_H)
+
+txtlabel.obj:	txtlabel.cpp $(GENERAL_H) $(GADGET_H)
+
+txtprnt.obj:	txtprnt.asm
+
+udata.obj:		udata.cpp $(GENERAL_H) type.h
+
+unit.obj:		unit.cpp $(GENERAL_H) $(UNIT_H)
+
+visudlg.obj:	visudlg.cpp $(GENERAL_H) $(GADGET_H)
+
+utracker.obj:	utracker.cpp utracker.h
+
+packet.obj:	packet.cpp packet.h field.h
+
+field.obj:	field.cpp field.h
+
+stats.obj:	stats.cpp $(GENERAL_H) packet.h field.h ccdde.h
+
+ccdde.obj:	ccdde.cpp ccdde.h dde.h
+
+dde.obj:	dde.cpp dde.h
+
+
+
+vector.obj: vector.cpp $(GENERAL_H) $(MISC_H)
+	*$(WATCOM)\binnt\wpp386 $(VCT_CFG) -foobj\vector.obj vector.cpp
+
+
+#**************************** End of makefile ******************************

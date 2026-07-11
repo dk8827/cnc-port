@@ -1,0 +1,1417 @@
+# TXT_NONE
+%3d.%02d
+# TXT_CREDIT_FORMAT
+Upgrade
+# TXT_BUTTON_UPGRADE
+Upgrade Structure
+# TXT_UPGRADE
+Upgrade
+# TXT_UPGRADE_BUTTON
+Sell
+# TXT_BUTTON_SELL
+Sell Structure
+# TXT_SELL
+Demolish Structure
+# TXT_DEMOLISH
+Repair
+# TXT_BUTTON_REPAIR
+Repair Structure
+# TXT_REPAIR
+Repair
+# TXT_REPAIR_BUTTON
+You:
+# TXT_YOU
+Enemy:
+# TXT_ENEMY
+Buildings Destroyed By
+# TXT_BUILD_DEST
+Units Destroyed By
+# TXT_UNIT_DEST
+Tiberium Harvested By
+# TXT_TIB_HARV
+Score: %d
+# TXT_SCORE_1
+You have attained the rank of
+# TXT_RANK_OF
+Yes
+# TXT_YES
+No
+# TXT_NO
+Ready
+# TXT_READY
+Holding
+# TXT_HOLDING
+Accomplished
+# TXT_SCENARIO_WON
+Failed
+# TXT_SCENARIO_LOST
+Choose Your Side
+# TXT_CHOOSE_SIDE
+Start New Game
+# TXT_START_NEW_GAME
+Replay Introduction
+# TXT_INTRO
+Cancel
+# TXT_CANCEL
+Rock
+# TXT_ROCK
+Resume Game
+# TXT_CHOAM_RESUME
+Build This
+# TXT_CHOAM_BUILD_THIS
+Thank you for playing Command & Conquer.\r
+# TXT_THANK_YOU
+Hall of Fame
+# TXT_FAME
+Global Defense Initiative
+# TXT_GDI
+Brotherhood of Nod
+# TXT_NOD
+Civilian
+# TXT_CIVILIAN
+Containment Team
+# TXT_JP
+OK
+# TXT_OK
+Tree
+# TXT_TREE
+\x011
+# TXT_LEFT
+\x010
+# TXT_RIGHT
+\x01E
+# TXT_UP
+\x01F
+# TXT_DOWN
+Clear the map
+# TXT_CLEAR_MAP
+Inherit previous map
+# TXT_INHERIT_MAP
+Clear
+# TXT_CLEAR
+Water
+# TXT_WATER
+Road
+# TXT_ROAD
+Tile Object
+# TXT_TILE
+Slope
+# TXT_SLOPE
+Brush
+# TXT_BRUSH
+Patch
+# TXT_PATCH
+River
+# TXT_RIVER
+Load Mission
+# TXT_LOAD_MISSION
+Save Mission
+# TXT_SAVE_MISSION
+Delete Mission
+# TXT_DELETE_MISSION
+Load
+# TXT_LOAD_BUTTON
+Save
+# TXT_SAVE_BUTTON
+Delete
+# TXT_DELETE_BUTTON
+Game Controls
+# TXT_GAME_CONTROLS
+Sound Controls
+# TXT_SOUND_CONTROLS
+Resume Mission
+# TXT_RESUME_MISSION
+Visual Controls
+# TXT_VISUAL_CONTROLS
+Abort Mission
+# TXT_QUIT_MISSION
+Exit Game
+# TXT_EXIT_GAME
+Options
+# TXT_OPTIONS
+Tiberium
+# TXT_TIBERIUM
+Tiberium On
+# TXT_TIBERIUM_ON
+Tiberium Off
+# TXT_TIBERIUM_OFF
+Squish mark
+# TXT_SQUISH
+Crater
+# TXT_CRATER
+Scorch Mark
+# TXT_SCORCH
+BRIGHTNESS:
+# TXT_BRIGHTNESS
+MUSIC VOLUME
+# TXT_MUSIC
+SOUND VOLUME
+# TXT_VOLUME
+TINT:
+# TXT_TINT
+CONTRAST:
+# TXT_CONTRAST
+GAME SPEED:
+# TXT_SPEED
+SCROLL RATE:
+# TXT_SCROLLRATE
+COLOR:
+# TXT_COLOR
+Return to game
+# TXT_RETURN_TO_GAME
+Enemy Soldier
+# TXT_ENEMY_SOLDIER
+Enemy Vehicle
+# TXT_ENEMY_VEHICLE
+Enemy Structure
+# TXT_ENEMY_STRUCTURE
+Flame Tank
+# TXT_FTANK
+Stealth Tank
+# TXT_STANK
+Light Tank
+# TXT_LTANK
+Med. Tank
+# TXT_MTANK
+Mammoth Tank
+# TXT_HTANK
+Nod Buggy
+# TXT_DUNE_BUGGY
+SAM Site
+# TXT_SAM
+Advanced Com. Center
+# TXT_EYE
+Rocket Launcher
+# TXT_MLRS
+Mobile HQ
+# TXT_MHQ
+Hum-vee
+# TXT_JEEP
+Transport Helicopter
+# TXT_TRANS
+A10
+# TXT_A10
+C17
+# TXT_C17
+Harvester
+# TXT_HARVESTER
+Artillery
+# TXT_ARTY
+S.S.M. Launcher
+# TXT_MSAM
+Minigunner
+# TXT_E1
+Grenadier
+# TXT_E2
+Bazooka
+# TXT_E3
+Flamethrower
+# TXT_E4
+Chem-warrior
+# TXT_E5
+Commando
+#TXT_RAMBO
+Hovercraft
+# TXT_HOVER
+Attack Helicopter
+# TXT_HELI
+Orca
+# TXT_ORCA
+APC
+# TXT_APC
+Guard Tower
+# TXT_GUARD_TOWER
+Communications Center
+# TXT_COMMAND
+Helicopter Pad
+# TXT_HELIPAD
+Airstrip
+# TXT_AIRSTRIP
+Tiberium Silo
+# TXT_STORAGE
+Construction Yard
+# TXT_CONST_YARD
+Tiberium Refinery
+# TXT_REFINERY
+Church
+# TXT_CIV1
+Han's and Gretel's
+# TXT_CIV2
+Hewitt's Manor
+# TXT_CIV3
+Ricktor's House
+# TXT_CIV4
+Gretchin's House
+# TXT_CIV5
+The Barn
+# TXT_CIV6
+Damon's pub
+# TXT_CIV7
+Fran's House
+# TXT_CIV8
+Music Factory
+# TXT_CIV9
+Toymaker's
+# TXT_CIV10
+Ludwig's House
+# TXT_CIV11
+Haystacks
+# TXT_CIV12
+Haystack
+# TXT_CIV13
+Wheat Field
+# TXT_CIV14
+Fallow Field
+# TXT_CIV15
+Corn Field
+# TXT_CIV16
+Celery Field
+# TXT_CIV17
+Potato Field
+# TXT_CIV18
+Sala's House
+# TXT_CIV20
+Abdul's House
+# TXT_CIV21
+Pablo's Wicked Pub
+# TXT_CIV22
+Village Well
+# TXT_CIV23
+Camel Trader
+# TXT_CIV24
+Church
+# TXT_CIV25
+Ali's House
+# TXT_CIV26
+Trader Ted's
+# TXT_CIV27
+Menelik's House
+# TXT_CIV28
+Prestor John's House
+# TXT_CIV29
+Village Well
+# TXT_CIV30
+Witch Doctor's Hut
+# TXT_CIV31
+Rikitikitembo's Hut
+# TXT_CIV32
+Roarke's Hut
+# TXT_CIV33
+Mubasa's Hut
+# TXT_CIV34
+Aksum's Hut
+# TXT_CIV35
+Mambo's Hut
+# TXT_CIV36
+The Studio
+# TXT_CIV37
+Technology Center
+# TXT_CIVMISS
+Gun Turret
+# TXT_TURRET
+Gun Boat
+# TXT_GUNBOAT
+Mobile Construction Yard
+# TXT_MCV
+Recon Bike
+# TXT_BIKE
+Power Plant
+# TXT_POWER
+Advanced Power Plant
+# TXT_ADVANCED_POWER
+Hospital
+# TXT_HOSPITAL
+Barracks
+# TXT_BARRACKS
+Concrete
+# TXT_CONCRETE
+Oil Pump
+# TXT_PUMP
+Oil Tanker
+# TXT_TANKER
+Sandbag Wall
+# TXT_SANDBAG_WALL
+Chain Link Fence
+# TXT_CYCLONE_WALL
+Concrete Wall
+# TXT_BRICK_WALL
+Barbwire Fence
+# TXT_BARBWIRE_WALL
+Wood Fence
+# TXT_WOOD_WALL
+Weapons Factory
+# TXT_WEAPON_FACTORY
+Advanced Guard Tower
+# TXT_AGUARD_TOWER
+Obelisk Guard Tower
+# TXT_OBELISK
+Bio-Research Laboritory
+# TXT_BIO_LAB
+Hand of Nod
+# TXT_HAND
+Temple of Nod
+# TXT_TEMPLE
+Repair Bay
+# TXT_FIX_IT
+Sidebar
+# TXT_TAB_SIDEBAR
+Options
+# TXT_TAB_BUTTON_CONTROLS
+Database
+# TXT_TAB_BUTTON_DATABASE
+Unrevealed Terrain
+# TXT_SHADOW
+Options Menu
+# TXT_OPTIONS_MENU
+STOP
+# TXT_STOP
+PLAY
+# TXT_PLAY
+SHUFFLE
+# TXT_SHUFFLE
+REPEAT
+# TXT_REPEAT
+Music volume:
+# TXT_MUSIC_VOLUME
+Sound volume:
+# TXT_SOUND_VOLUME
+On
+# TXT_ON
+Off
+# TXT_OFF
+Act On Instinct
+# TXT_THEME_AOI
+Looks Like Trouble
+# TXT_THEME_TROUBLE
+Industrial
+# TXT_THEME_IND
+Reaching Out
+# TXT_THEME_ROUT
+On The Prowl
+# TXT_THEME_OTP
+Prepare For Battle
+# TXT_THEME_PRP
+Just Do It!
+# TXT_THEME_JUSTDOIT
+In The Line Of Fire
+# TXT_THEME_LINEFIRE
+March To Doom
+# TXT_THEME_MARCH
+Deception
+# TXT_THEME_STOPTHEM
+C&C Thang
+# TXT_THEME_CCTHANG
+Enemies To Be Feared
+# TXT_THEME_BEFEARED
+Warfare
+# TXT_THEME_WARFARE
+Fight, Win, Prevail
+# TXT_THEME_FWP
+Die!!
+# TXT_THEME_DIE
+No Mercy
+# TXT_THEME_NOMERCY
+Mechanical Man
+# TXT_THEME_TARGET
+I Am
+# TXT_THEME_IAM
+Great Shot!
+# TXT_THEME_WIN1
+Multiplayer Game
+# TXT_MULTIPLAYER_GAME
+No files available
+# TXT_NO_FILES
+Do you want to delete this file?
+# TXT_DELETE_SINGLE_FILE
+Do you want to delete %d files?
+# TXT_DELETE_MULTIPLE_FILES
+Reset Values
+# TXT_RESET_MENU
+Confirmation
+# TXT_CONFIRMATION
+Do you want to abort the mission?
+# TXT_CONFIRM_EXIT
+Mission Description
+# TXT_MISSION_DESCRIPTION
+Joe
+# TXT_C1
+Bill
+# TXT_C2
+Shelly
+# TXT_C3
+Maria
+# TXT_C4
+Eydie
+# TXT_C5
+Dave
+# TXT_C6
+Phil
+# TXT_C7
+Dwight
+# TXT_C8
+Erik
+# TXT_C9
+Dr. Moebius
+# TXT_MOEBIUS
+Road Bib
+# TXT_BIB
+Faster
+# TXT_FASTER
+Slower
+# TXT_SLOWER
+Ion Cannon
+# TXT_ION_CANNON
+Nuclear Strike
+# TXT_NUKE_STRIKE
+Air Strike
+# TXT_AIR_STRIKE
+Tyrannosaurus Rex
+# TXT_TREX
+Triceratops
+# TXT_TRIC
+Velociraptor
+# TXT_RAPT
+Stegasaurus
+# TXT_STEG
+Steel Crate
+# TXT_STEEL_CRATE
+Wood Crate
+# TXT_WOOD_CRATE
+Flag Location
+# TXT_FLAG_SPOT
+GDI
+# TXT_G_D_I
+NOD
+# TXT_N_O_D
+Unable to read scenario!
+# TXT_UNABLE_READ_SCENARIO
+Error loading game!
+# TXT_ERROR_LOADING_GAME
+Obsolete saved game.
+# TXT_OBSOLETE_SAVEGAME
+You must enter a description!
+# TXT_MUSTENTER_DESCRIPTION
+Error saving game!
+# TXT_ERROR_SAVING_GAME
+Delete this file?
+# TXT_DELETE_FILE_QUERY
+[EMPTY SLOT]
+# TXT_EMPTY_SLOT
+Select Multiplayer Game
+# TXT_SELECT_MPLAYER_GAME
+Modem/Serial
+# TXT_MODEM_SERIAL
+Network
+# TXT_NETWORK
+Unable to initialize network!
+# TXT_INIT_NET_ERROR
+Join Network Game
+# TXT_JOIN_NETWORK_GAME
+New
+# TXT_NEW
+Join
+# TXT_JOIN
+Send Message
+# TXT_SEND_MESSAGE
+Your Name:
+# TXT_YOUR_NAME
+Side:
+# TXT_SIDE_COLON
+Color:
+# TXT_COLOR_COLON
+Games
+# TXT_GAMES
+Players
+# TXT_PLAYERS
+Scenario:
+# TXT_SCENARIO_COLON
+>> NOT FOUND <<
+# TXT_NOT_FOUND
+Starting Credits:
+# TXT_START_CREDITS_COLON
+Bases:
+# TXT_BASES_COLON
+Tiberium:
+# TXT_TIBERIUM_COLON
+Crates:
+# TXT_CRATES_COLON
+AI Players:
+# TXT_AI_PLAYERS_COLON
+Request denied.
+# TXT_REQUEST_DENIED
+Unable to play; scenario not found.
+# TXT_UNABLE_PLAY_WAAUGH
+Nothing to join!
+# TXT_NOTHING_TO_JOIN
+You must enter a name!
+# TXT_NAME_ERROR
+Duplicate names are not allowed.
+# TXT_DUPENAMES_NOTALLOWED
+Your game version is outdated.
+# TXT_YOURGAME_OUTDATED
+Destination game version is outdated.
+# TXT_DESTGAME_OUTDATED
+%s's Game
+# TXT_THATGUYS_GAME
+[%s's Game]
+# TXT_THATGUYS_GAME_BRACKET
+Network Game Setup
+# TXT_NETGAME_SETUP
+Reject
+# TXT_REJECT
+You can't reject yourself!  You might develop serious self-esteem problems.
+# TXT_CANT_REJECT_SELF
+You must select a player to reject.
+# TXT_SELECT_PLAYER_REJECT
+Bases On
+# TXT_BASES_ON
+Bases Off
+# TXT_BASES_OFF
+Crates On
+# TXT_CRATES_ON
+Crates Off
+# TXT_CRATES_OFF
+AI Players On
+# TXT_AI_PLAYERS_ON
+AI Players Off
+# TXT_AI_PLAYERS_OFF
+Scenarios
+# TXT_SCENARIOS
+Starting Credits
+# TXT_START_CREDITS
+Only one player?
+# TXT_ONLY_ONE
+Oops!
+# TXT_OOPS
+To %s:
+# TXT_TO
+To All:
+# TXT_TO_ALL
+Message:
+# TXT_MESSAGE
+Connection to %s lost!
+# TXT_CONNECTION_LOST
+%s has left the game.
+# TXT_LEFT_GAME
+%s has been defeated!
+# TXT_PLAYER_DEFEATED
+Waiting to Connect...
+# TXT_WAITING_CONNECT
+Connection error!\rCheck your cables.\rAttempting to Reconnect...
+# TXT_NULL_CONNERR_CHECK_CABLES
+Connection error!\rRedialing...
+# TXT_MODEM_CONNERR_REDIALING
+Connection error!\rWaiting for Call...
+# TXT_MODEM_CONNERR_WAITING
+Select Serial Game
+# TXT_SELECT_SERIAL_GAME
+Dial Modem
+# TXT_DIAL_MODEM
+Answer Modem
+# TXT_ANSWER_MODEM
+Null Modem
+# TXT_NULL_MODEM
+Settings
+# TXT_SETTINGS
+Port:
+# TXT_PORT_COLON
+IRQ:
+# TXT_IRQ_COLON
+Baud:
+# TXT_BAUD_COLON
+Init String:
+# TXT_INIT_STRING
+Call Waiting String:
+# TXT_CWAIT_STRING
+Tone Dialing
+# TXT_TONE_BUTTON
+Pulse Dialing
+# TXT_PULSE_BUTTON
+Host Serial Game
+# TXT_HOST_SERIAL_GAME
+Opponent:
+# TXT_OPPONENT_COLON
+User signed off!
+# TXT_USER_SIGNED_OFF
+Join Serial Game
+# TXT_JOIN_SERIAL_GAME
+Phone List
+# TXT_PHONE_LIST
+Add
+# TXT_ADD
+Edit
+# TXT_EDIT
+Dial
+# TXT_DIAL
+Default
+# TXT_DEFAULT
+Default Settings
+# TXT_DEFAULT_SETTINGS
+Custom Settings
+# TXT_CUSTOM_SETTINGS
+Phone Listing
+# TXT_PHONE_LISTING
+Name:
+# TXT_NAME_COLON
+Number:
+# TXT_NUMBER_COLON
+Unable to find modem.\rCheck power and cables.
+# TXT_UNABLE_FIND_MODEM
+No carrier.
+# TXT_NO_CARRIER
+Line busy.
+# TXT_LINE_BUSY
+Number invalid.
+# TXT_NUMBER_INVALID
+Other system not responding!
+# TXT_SYSTEM_NOT_RESPONDING
+Games are out of sync!
+# TXT_OUT_OF_SYNC
+Packet received too late!
+# TXT_PACKET_TOO_LATE
+Other player has left the game.
+# TXT_PLAYER_LEFT_GAME
+From %s:%s
+# TXT_FROM
+2,728,000
+# TXT_MAP_P01
+38,385,000
+# TXT_MAP_P02
+10,373,000
+# TXT_MAP_P03
+51,994,000
+# TXT_MAP_P04
+80,387,000
+# TXT_MAP_P05
+10,400,000
+# TXT_MAP_P06
+5,300,000
+# TXT_MAP_P07
+7,867,000
+# TXT_MAP_P08
+10,333,000
+# TXT_MAP_P09
+1,974,000
+# TXT_MAP_P10
+23,169,000
+# TXT_MAP_P11
+10,064,000
+# TXT_MAP_P12
+3,285,000
+# TXT_MAP_P13
+8,868,000
+# TXT_MAP_P14
+10,337,000
+# TXT_MAP_P15
+4,365,000
+# TXT_MAP_P16
+1,607,000
+# TXT_MAP_P17
+4,485,000
+# TXT_MAP_P18
+56,386,000
+# TXT_MAP_P19
+28,305,000
+# TXT_MAP_P20
+5,238,000
+# TXT_MAP_P21
+2,059,000
+# TXT_MAP_P22
+13,497,000
+# TXT_MAP_P23
+4,997,000
+# TXT_MAP_P24
+88,500,000
+# TXT_MAP_P25
+1,106,000
+# TXT_MAP_P26
+12,658,000
+# TXT_MAP_P27
+3,029,000
+# TXT_MAP_P28
+39,084,000
+# TXT_MAP_P29
+23,154,000
+# TXT_MAP_P30
+8,902,000
+# TXT_MAP_P31
+27,791,000
+# TXT_MAP_P32
+1,574,000
+# TXT_MAP_P33
+15,469,000
+# TXT_MAP_P34
+1,300,000
+# TXT_MAP_P35
+41,688,000
+# TXT_MAP_P36
+24,900 SQ. MI.
+# TXT_MAP_A00
+120,727 SQ. MI.
+# TXT_MAP_A01
+80,134 SQ. MI.
+# TXT_MAP_A02
+233,100 SQ. MI.
+# TXT_MAP_A03
+137,838 SQ. MI.
+# TXT_MAP_A04
+30,449 SQ. MI.
+# TXT_MAP_A05
+18,932 SQ. MI.
+# TXT_MAP_A06
+32,377 SQ. MI.
+# TXT_MAP_A07
+35,919 SQ. MI.
+# TXT_MAP_A08
+7,819 SQ. MI.
+# TXT_MAP_A09
+91,699 SQ. MI.
+# TXT_MAP_A10
+51,146 SQ. MI.
+# TXT_MAP_A11
+11,100 SQ. MI.
+# TXT_MAP_A12
+44,365 SQ. MI.
+# TXT_MAP_A13
+39,449 SQ. MI.
+# TXT_MAP_A14
+19,741 SQ. MI.
+# TXT_MAP_A15
+17,413 SQ. MI.
+# TXT_MAP_A16
+RIGA
+# TXT_MAP_C00
+WARSAW
+# TXT_MAP_C01
+MINSK
+# TXT_MAP_C02
+KIEV
+# TXT_MAP_C03
+BERLIN
+# TXT_MAP_C04
+PRAGUE
+# TXT_MAP_C05
+BRATISLAVA
+# TXT_MAP_C06
+VIENNA
+# TXT_MAP_C07
+BUDAPEST
+# TXT_MAP_C08
+LJUBLJANA
+# TXT_MAP_C09
+BUCHAREST
+# TXT_MAP_C10
+ATHENS
+# TXT_MAP_C11
+TIRANA
+# TXT_MAP_C12
+SOFIA
+# TXT_MAP_C13
+BELGRADE
+# TXT_MAP_C14
+SARAJEVO
+# TXT_MAP_C15
+TALLINN
+# TXT_MAP_C16
+TRIPOLI
+# TXT_MAP_C17
+CAIRO
+# TXT_MAP_C18
+KHARTOUM
+# TXT_MAP_C19
+N'DJAMENA
+# TXT_MAP_C20
+NOUAKCHOTT
+# TXT_MAP_C21
+YAMOUSSOUKRO
+# TXT_MAP_C22
+PORTO-NOVO
+# TXT_MAP_C23
+ABUJA
+# TXT_MAP_C24
+LIBREVILLE
+# TXT_MAP_C25
+YAOUNDE
+# TXT_MAP_C26
+BANGUI
+# TXT_MAP_C27
+KINSHASA
+# TXT_MAP_C28
+CAIRO
+# TXT_MAP_C29
+LUANDA
+# TXT_MAP_C30
+DAR-ES-SALAAM
+# TXT_MAP_C31
+WINDHOEK
+# TXT_MAP_C32
+MAPUTO
+# TXT_MAP_C33
+GABARONE
+# TXT_MAP_C34
+CAPE TOWN
+# TXT_MAP_C35
+NEGLIGIBLE
+# TXT_MAP_GDP00
+$162.7 BLN
+# TXT_MAP_GDP01
+$47.6 BLN
+# TXT_MAP_GDP02
+$1,131 BLN
+# TXT_MAP_GDP03
+$120 BLN
+# TXT_MAP_GDP04
+$164 BLN
+# TXT_MAP_GDP05
+$60.1 BLN
+# TXT_MAP_GDP06
+$21 BLN
+# TXT_MAP_GDP07
+$71.9 BLN
+# TXT_MAP_GDP08
+$77 BLN
+# TXT_MAP_GDP09
+$4.0 BLN
+# TXT_MAP_GDP10
+$47.3 BLN
+# TXT_MAP_GDP11
+$120.1 BLN
+# TXT_MAP_GDP12
+$14.0 BLN
+# TXT_MAP_GDP13
+$28.9 BLN
+# TXT_MAP_GDP14
+$39.2 BLN
+# TXT_MAP_GDP15
+$12.1 BLN
+# TXT_MAP_GDP16
+$1.0 BLN
+# TXT_MAP_GDP17
+$10.0 BLN
+# TXT_MAP_GDP18
+$1.7 BLN
+# TXT_MAP_GDP19
+$28.0 BLN
+# TXT_MAP_GDP20
+$5.3 BLN
+# TXT_MAP_GDP21
+$11.6 BLN
+# TXT_MAP_GDP22
+$1.3 BLN
+# TXT_MAP_GDP23
+$6.6 BLN
+# TXT_MAP_GDP24
+$8.3 BLN
+# TXT_MAP_GDP25
+$6.9 BLN
+# TXT_MAP_GDP26
+$2.0 BLN
+# TXT_MAP_GDP27
+$3.1 BLN
+# TXT_MAP_GDP28
+$104.0 BLN
+# TXT_MAP_GDP29
+JELGAVA
+# TXT_MAP_PC00
+GDANSK
+# TXT_MAP_PC01
+BYELISTOK
+# TXT_MAP_PC02
+BOBYRUSK
+# TXT_MAP_PC03
+IVANO-FRANKOVSK
+# TXT_MAP_PC04
+HANOVER
+# TXT_MAP_PC05
+DRESDEN
+# TXT_MAP_PC06
+OSTRAVA
+# TXT_MAP_PC07
+BRATISLAVA
+# TXT_MAP_PC08
+SALZBURG
+# TXT_MAP_PC09
+BUDAPEST
+# TXT_MAP_PC10
+TRIESTE
+# TXT_MAP_PC11
+ARAD
+# TXT_MAP_PC12
+CORINTH
+# TXT_MAP_PC13
+SHKODER
+# TXT_MAP_PC14
+SOFIA
+# TXT_MAP_PC15
+NIS
+# TXT_MAP_PC16
+BELGRADE
+# TXT_MAP_PC17
+?
+# TXT_MAP_PC18
+PARNU
+# TXT_MAP_PC19
+TMASSAH
+# TXT_MAP_PC20
+AL-ALAMYN
+# TXT_MAP_PC21
+AL-KHARIJAH
+# TXT_MAP_PC22
+AL-UBAYYID
+# TXT_MAP_PC23
+KAFIA-KINGI
+# TXT_MAP_PC24
+OUM HADJER
+# TXT_MAP_PC25
+MAO
+# TXT_MAP_PC26
+TIDJIKDJA
+# TXT_MAP_PC27
+ABIDJAN
+# TXT_MAP_PC28
+PORTO-NOVO
+# TXT_MAP_PC29
+ABUJA
+# TXT_MAP_PC30
+KOULA-MOUTOU
+# TXT_MAP_PC31
+BERTOUA
+# TXT_MAP_PC32
+BANGASSOU
+# TXT_MAP_PC33
+LODJA
+# TXT_MAP_PC34
+KINSHASA
+# TXT_MAP_PC35
+LUXOR
+# TXT_MAP_PC36
+CAIUNDO
+# TXT_MAP_PC37
+MZUZU
+# TXT_MAP_PC38
+KEETMANSHOOP
+# TXT_MAP_PC39
+XAI-XAI
+# TXT_MAP_PC40
+GHANZI
+# TXT_MAP_PC41
+CAPE TOWN
+# TXT_MAP_PC42
+GDI PROGRESSION
+# TXT_MAP_GDI
+NOD PROGRESSION
+# TXT_MAP_NOD
+LOCATING COORDINATES
+# TXT_MAP_LOCATE
+OF NEXT MISSION
+# TXT_MAP_NEXT_MISSION
+SELECT TERRITORY
+# TXT_MAP_SELECT
+TO ATTACK
+# TXT_MAP_TO_ATTACK
+POPULATION:
+# TXT_MAP_GDISTAT0
+GEOGRAPHIC AREA:
+# TXT_MAP_GDISTAT1
+CAPITAL:
+# TXT_MAP_GDISTAT2
+GOVERNMENT:
+# TXT_MAP_GDISTAT3
+GROSS DOMESTIC PRODUCT:
+# TXT_MAP_GDISTAT4
+POINT OF CONFLICT:
+# TXT_MAP_GDISTAT5
+MILITARY POWER:
+# TXT_MAP_GDISTAT6
+EXPENDABILITY:
+# TXT_MAP_NODSTAT0
+GOVT CORRUPTABILITY:
+# TXT_MAP_NODSTAT1
+NET WORTH:
+# TXT_MAP_NODSTAT2
+MILITARY STRENGTH:
+# TXT_MAP_NODSTAT3
+MILITARY RESISTANCE:
+# TXT_MAP_NODSTAT4
+LATVIA
+# TXT_MAP_COUNTRYNAME0
+POLAND
+# TXT_MAP_COUNTRYNAME1
+BELARUS
+# TXT_MAP_COUNTRYNAME2
+UKRAINE
+# TXT_MAP_COUNTRYNAME3
+GERMANY
+# TXT_MAP_COUNTRYNAME4
+CZECH REPUBLIC
+# TXT_MAP_COUNTRYNAME5
+SLOVAKIA
+# TXT_MAP_COUNTRYNAME6
+AUSTRIA
+# TXT_MAP_COUNTRYNAME7
+HUNGARY
+# TXT_MAP_COUNTRYNAME8
+SLOVENIA
+# TXT_MAP_COUNTRYNAME9
+ROMANIA
+# TXT_MAP_COUNTRYNAME10
+GREECE
+# TXT_MAP_COUNTRYNAME11
+ALBANIA
+# TXT_MAP_COUNTRYNAME12
+BULGARIA
+# TXT_MAP_COUNTRYNAME13
+YUGOSLAVIA
+# TXT_MAP_COUNTRYNAME14
+BOSNIA/HERZOGOVINA
+# TXT_MAP_COUNTRYNAME15
+LIBYA
+# TXT_MAP_COUNTRYNAME16
+EGYPT
+# TXT_MAP_COUNTRYNAME17
+SUDAN
+# TXT_MAP_COUNTRYNAME18
+CHAD
+# TXT_MAP_COUNTRYNAME19
+MAURITANIA
+# TXT_MAP_COUNTRYNAME20
+IVORY COAST
+# TXT_MAP_COUNTRYNAME21
+BENIN
+# TXT_MAP_COUNTRYNAME22
+NIGERIA
+# TXT_MAP_COUNTRYNAME23
+GABON
+# TXT_MAP_COUNTRYNAME24
+CAMEROON
+# TXT_MAP_COUNTRYNAME25
+CENTRAL AFRICAN REPUBLIC
+# TXT_MAP_COUNTRYNAME26
+ZAIRE
+# TXT_MAP_COUNTRYNAME27
+ANGOLA
+# TXT_MAP_COUNTRYNAME28
+TANZANIA
+# TXT_MAP_COUNTRYNAME29
+NAMIBIA
+# TXT_MAP_COUNTRYNAME30
+MOZAMBIQUE
+# TXT_MAP_COUNTRYNAME31
+BOTSWANA
+# TXT_MAP_COUNTRYNAME32
+SOUTH AFRICA
+# TXT_MAP_COUNTRYNAME33
+ESTONIA
+# TXT_MAP_COUNTRYNAME34
+REPUBLIC
+# TXT_MAP_GOVT0
+DEMOCRATIC STATE
+# TXT_MAP_GOVT1
+FEDERAL REPUBLIC
+# TXT_MAP_GOVT2
+CONST. REPUBLIC
+# TXT_MAP_GOVT3
+PARL. DEMOCRACY
+# TXT_MAP_GOVT4
+PRES. PARL. REPUBLIC
+# TXT_MAP_GOVT5
+DEMOCRACY
+# TXT_MAP_GOVT6
+IN TRANSITION
+# TXT_MAP_GOVT7
+ISLAMIC SOCIALIST
+# TXT_MAP_GOVT8
+MILITARY
+# TXT_MAP_GOVT9
+ISLAMIC REPUBLIC
+# TXT_MAP_GOVT10
+PARL. REPUBLIC
+# TXT_MAP_GOVT11
+LOCAL MILITIA
+# TXT_MAP_ARMY0
+STATE MILITIA
+# TXT_MAP_ARMY1
+NATIONAL GUARD
+# TXT_MAP_ARMY2
+FREE STANDING ARMY
+# TXT_MAP_ARMY3
+?
+# TXT_MAP_ARMY4
+NATIONAL POWER
+# TXT_MAP_ARMY5
+RESPECTABLE
+# TXT_MAP_MILITARY0
+FORMIDABLE
+# TXT_MAP_MILITARY1
+LAUGHABLE
+# TXT_MAP_MILITARY2
+REASONABLE
+# TXT_MAP_MILITARY3
+INSIGNIFICANT
+# TXT_MAP_MILITARY4
+CLICK TO CONTINUE
+# TXT_MAP_CLICK2
+LOW
+# TXT_MAP_LMH0
+MEDIUM
+# TXT_MAP_LMH1
+HIGH
+# TXT_MAP_LMH2
+TIME:
+# TXT_SCORE_TIME
+LEADERSHIP:
+# TXT_SCORE_LEAD
+EFFICIENCY:
+# TXT_SCORE_EFFI
+TOTAL SCORE:
+# TXT_SCORE_TOTA
+CASUALTIES:
+# TXT_SCORE_CASU
+NEUTRAL:
+# TXT_SCORE_NEUT
+GDI:
+# TXT_SCORE_GDI
+BUILDINGS LOST
+# TXT_SCORE_BUIL
+BUILDINGS
+# TXT_SCORE_BUIL1
+LOST:
+# TXT_SCORE_BUIL2
+TOP SCORES
+# TXT_SCORE_TOP
+ENDING CREDITS:
+# TXT_SCORE_ENDCRED
+%dh %dm
+# TXT_SCORE_TIMEFORMAT1
+%dm
+# TXT_SCORE_TIMEFORMAT2
+NOD:
+# TXT_SCORE_NOD
+Dialing...
+# TXT_DIALING
+Dialing Canceled
+# TXT_DIALING_CANCELED
+Waiting for Call...
+# TXT_WAITING_FOR_CALL
+Answering Canceled
+# TXT_ANSWERING_CANCELED
+Engineer
+# TXT_E7
+Special Options
+# TXT_SPECIAL_OPTIONS
+Targeting flash visible to all.
+# TXT_VISIBLE_TARGET
+Allow targeting of trees.
+# TXT_TREE_TARGET
+Allow undeploy of construction yard.
+# TXT_MCV_DEPLOY
+Employ smarter self defense logic.
+# TXT_SMART_DEFENCE
+Moderate production speed.
+# TXT_SLOW_BUILD
+Use three point turn logic.
+# TXT_THREE_POINT
+Tiberium will grow.
+# TXT_TIBERIUM_GROWTH
+Tiberium will spread.
+# TXT_TIBERIUM_SPREAD
+Disable building "bib" pieces.
+# TXT_ROAD_PIECES
+Allow running from immediate threats.
+# TXT_SCATTER
+Not a Null Modem Cable Attached!\rIt is a modem or loopback cable.
+# TXT_MODEM_OR_LOOPBACK
+Map
+# TXT_MAP
+From Computer:
+# TXT_FROM_COMPUTER
+Prepare to die!
+# TXT_COMP_MSG1
+How about a bullet sandwich?!
+# TXT_COMP_MSG2
+Incoming!
+# TXT_COMP_MSG3
+I see you!
+# TXT_COMP_MSG4
+Hey, I'm over here!
+# TXT_COMP_MSG5
+Come get some!
+# TXT_COMP_MSG6
+I got you!
+# TXT_COMP_MSG7
+You humans are never a challenge!
+# TXT_COMP_MSG8
+Abort, Retry, Ignore? (Ha ha!)
+# TXT_COMP_MSG9
+Format another? (Just kidding!)
+# TXT_COMP_MSG10
+Beat me and I'll reboot!
+# TXT_COMP_MSG11
+You're artificial intelligence!
+# TXT_COMP_MSG12
+My AI is better than your AI.
+# TXT_COMP_MSG13
+Air Strike
+# TXT_THEME_AIRSTRIKE
+Demolition
+# TXT_THEME_HEAVYG
+Untamed Land
+# TXT_THEME_J1
+Take 'em Out
+# TXT_THEME_JDI_V2
+Radio
+# TXT_THEME_RADIO
+Rain In The Night
+# TXT_THEME_RAIN
+Canyon Chase
+# TXT_THEME_IND2
+Heartbreak
+# TXT_THEME_HEART
+Blossom Tree
+# TXT_BLOSSOM_TREE
+Restate
+# TXT_RESTATE_MISSION
+Computer
+# TXT_COMPUTER
+Unit Count:
+# TXT_COUNT
+Tech Level:
+# TXT_LEVEL
+Opponent
+# TXT_OPPONENT
+Kills:
+# TXT_KILLS_COLON
+Video
+# TXT_VIDEO
+Nikoomba
+# TXT_C10
+Capture The Flag
+# TXT_CAPTURE_THE_FLAG
+Ride of the Valkyries
+# TXT_THEME_VALK
+Mission Objective
+# TXT_OBJECTIVE
+Mission
+# TXT_MISSION
+No saved games available.
+# TXT_NO_SAVES
+Civilian Building
+# TXT_CIVILIAN_BUILDING
+Technician
+# TXT_TECHNICIAN
+Visceroid
+# TXT_VISCEROID
+Save game options are not allowed during a multiplayer session.
+# TXT_NO_SAVELOAD
+Defender has the advantage.
+# TXT_DEFENDER_ADVANTAGE
+Show true object names.
+# TXT_SHOW_NAMES
+Agent Delphi
+# TXT_DELPHI
+Would you like to replay this mission?
+# TXT_TO_REPLAY
+Reconnecting to %s.
+# TXT_RECONN_TO
+Please wait %02d seconds.
+# TXT_PLEASE_WAIT
+Do you wish\rto surrender?
+# TXT_SURRENDER
+GLOBAL DEFENSE INITIATIVE
+# TXT_GDI_NAME
+BROTHERHOOD OF NOD
+# TXT_NOD_NAME
+SELECT TRANSMISSION
+# TXT_SEL_TRANS
+Your game name must be unique.
+# TXT_GAMENAME_MUSTBE_UNIQUE
+Game is closed.
+# TXT_GAME_IS_CLOSED
+Your name must be unique.
+# TXT_NAME_MUSTBE_UNIQUE
+Reconnecting to %s
+# TXT_RECONNECTING_TO
+Waiting for connections...
+# TXT_WAITING_FOR_CONNECTIONS
+Time allowed: %02d seconds
+# TXT_TIME_ALLOWED
+Press ESC to cancel.
+# TXT_PRESS_ESC
+From Computer: It's just you and me now!
+# TXT_JUST_YOU_AND_ME
+Capture the Flag:
+# TXT_CAPTURE_THE_FLAG_COLON
+Dr. Chan
+# TXT_CHAN
+%s has allied with %s
+# TXT_HAS_ALLIED
+%s declares war on %s
+# TXT_AT_WAR
+Select a target
+# TXT_SEL_TARGET
+Allow separate helipad purchase
+# TXT_SEPARATE_HELIPAD
+Resign Game
+# TXT_RESIGN
+Tiberium grows quickly.
+# TXT_TIBERIUM_FAST
+Answering...
+# TXT_ANSWERING
+Initializing Modem...
+# TXT_INITIALIZING_MODEM
+Scenarios don't match.
+# TXT_SCENARIOS_DO_NOT_MATCH
+Power Output
+# TXT_POWER_OUTPUT
+Power Output (low)
+# TXT_POWER_OUTPUT_LOW
+Continue
+# TXT_CONTINUE
+Data Queue Overflow
+# TXT_QUEUE_FULL
+%s changed game options!
+# TXT_SPECIAL_WARNING
+Please insert a Command & Conquer CD into the CD-ROM drive.
+# TXT_CD_DIALOG_1
+Please insert CD %d (%s) into the CD-ROM drive.
+# TXT_CD_DIALOG_2
+Command & Conquer is unable to detect your CD ROM drive.
+# TXT_CD_ERROR1
+No Sound Card Detected
+# TXT_NO_SOUND_CARD
+UNKNOWN
+# TXT_UNKNOWN
+(old)
+# TXT_OLD_GAME
+Insufficient Disk Space to run Command & Conquer.
+# TXT_NO_SPACE
+You must have %d megabytes of free disk space.
+# TXT_MUST_HAVE_SPACE
+Run SETUP program first.
+# TXT_RUN_SETUP
+Waiting for Opponent
+# TXT_WAITING_FOR_OPPONENT
+Please select 'Settings' to setup default configuration
+# TXT_SELECT_SETTINGS
+Prison
+# TXT_PRISON
+Game Saved
+# TXT_GAME_WAS_SAVED
+Insufficient disk space to save a game.  Please delete a previous save to free up some disk space and try again.
+# TXT_SPACE_CANT_SAVE
+Invalid Port/Address.\rCOM 1-4 OR ADDRESS
+# TXT_INVALID_PORT_ADDRESS
+Invalid Port and/or IRQ settings
+# TXT_INVALID_SETTINGS
+IRQ already in use
+# TXT_IRQ_ALREADY_IN_USE
+Abort
+# TXT_ABORT
+Restart
+# TXT_RESTART
+Mission is restarting.\rPlease wait...
+# TXT_RESTARTING
+Mission is loading.\rPlease wait...
+# TXT_LOADING
+Error in the InitString
+# TXT_ERROR_IN_INITSTRING

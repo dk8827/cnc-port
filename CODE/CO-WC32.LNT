@@ -1,0 +1,67 @@
+//    Compiler Options for Watcom C, C++ 32 bit
+
+-cwc
+
+//    This file contains options to allow PC-lint to process source
+//    files for your compiler.  It is used as follows:
+//
+//    lint  co-wc32.lnt  source-file(s)
+//
+-d_M_IX86=200   // assume Intel 80286 architecture -- modify to suit
+-d__declspec()= // ignore this construct
+
+  // additional reserve words needed
++rw(_loadds,_export)
++rw(__interrupt,__near,__far,__huge,__fortran,__pascal,__cdecl)
++rw(__export,__loadds,__saveregs,__asm,__fastcall,__stdcall)
++rw(_export)
+
++fcd            // makes cdecl significant -- used for proto generation
++fcu            // chars are by default unsigned
++fsu            // so are strings
+-d__386__       // pre-defined macro for 386 version, not set by -cwc
+-d__FLAT__      // not set by -cwc
+-si4            // sizeof(int)         is 4
+-spN4           // sizeof(near pointer) is 4
+-spF6           // sizeof( far pointer) is 6
+-sld10          // sizeof(long double) is 10.
+-function(exit,_exit)   // _exit() is like exit()
+-emacro(734,putc)   // don't complain about items being too large.
+-emacro(506,putc)   // don't complain about constant Boolean
+-emacro(???,va_arg)     // the va_arg() macro can yield 415, 416, 661, 662
+			// 796 and 797 (out-of-bounds errors).
+
+   // While processing compiler (library) header files ...
+-elib(46)       // an unsigned short bit field is used as __FILLER__
+-elib(522)      // function return value ignored
+-elib(537)      // repeated include file (ios.h)
+-elib(641)      // converting enum to int
+-elib(652)      // suppress message about #define of earlier declared symbols
+-elib(655)      // ORing enum's
+-elib(726)      // extraneous comma in enumeration
+-elib(760)      // suppress message about multiple identical macro defs
+-elib(762)      // suppress message about multiple identical declarations and
+-elib(806)      // small bit field is signed
+-elib(1053)     // prototypes cannot be distinguished
+-elib(1511)     // member (rdbuf) hides nonvirtual member
+-elib(1704)     // private copy constructor
+-elib(1712)     // default constructor missing
+-elib(1717)     // empty prototypes
+-elib(1720)     // strange argument to assignment operator
+-elib(1721)     // unusual operator =() declaration
+-elib(1722)     // assignment operator does not return ref to class
+-elib(1724)     // strange argument to copy constructor
+
+-esym(1702,operator<<,operator>>)
+
+//  The following functions exhibit variable return modes.
+//  That is, they may equally-usefully be called for a value
+//  as called just for their effects.  Accordingly we inhibit
+//  Warning 534 for these functions.
+//  Feel free to add to or subtract from this list.
+
+-esym(534,close,creat,fclose,fflush,fprintf,fputc)
+-esym(534,fputs,fscanf,fseek,fwrite,lseek,memcpy,memmove,memset)
+-esym(534,printf,puts,scanf,sprintf,sscanf,strcat,strcpy)
+-esym(534,strncat,strncpy,unlink,write)
+

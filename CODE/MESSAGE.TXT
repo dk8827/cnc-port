@@ -1,0 +1,57 @@
+# MESSAGE_NONE
+You must build a Windtrap to provide power to your base.  Without power, your structures will decay.
+# MESSAGE_BUILD_WINDTRAP
+Concrete: Use concrete to make a sturdy foundation for your structures.
+# MESSAGE_STRUCT_CONCRETE
+Palace: This is your Palace.
+# MESSAGE_STRUCT_PALACE
+Light Factory: The Light Factory produces light attack vehicles.
+# MESSAGE_STRUCT_LIGHT
+Heavy Factory: The Heavy Factory produces tracked vehicles.
+# MESSAGE_STRUCT_HEAVY
+Hi-Tech Factory: The Hi-Tech Factory produces flying vehicles.
+# MESSAGE_STRUCT_HITECH
+House IX: The IX Research Facility advances your House's technology.
+# MESSAGE_STRUCT_IX
+WOR: Wor is used to train your Heavy infantry.
+# MESSAGE_STRUCT_WOR
+Construction Facility: All structures are built by the construction facility.
+# MESSAGE_STRUCT_CONST
+Windtrap: The windtrap supplies power to your base.  Without power your structures will decay.
+# MESSAGE_STRUCT_WINDTRAP
+Barracks: The Barracks is used to train your Light infantry.
+# MESSAGE_STRUCT_BARRACKS
+Startport: The Starport is used to order and receive shipments from C.H.O.A.M.
+# MESSAGE_STRUCT_STARPORT
+Spice Refinery: The Refinery converts spice into credits.
+# MESSAGE_STRUCT_REFINERY
+Repair Facility: The Repair Facility is used to repair your vehicles.
+# MESSAGE_STRUCT_REPAIR
+Wall: The wall is used for passive defense.
+# MESSAGE_STRUCT_WALL
+Gun Turret: The cannon turret is used for short range active defense.
+# MESSAGE_STRUCT_TURRET
+Rocket Turret: The rocket/cannon turret is used for both short and medium range active defense.
+# MESSAGE_STRUCT_RTURRET
+Spice Silo: The Spice silo is used to store refined spice.
+# MESSAGE_STRUCT_SILO
+Outpost: The Outpost provides radar and aids control of distant vehicles.
+# MESSAGE_STRUCT_OUTPOST
+There isn't enough open concrete to place this structure.  You may proceed, but without enough concrete the building will need repairs.
+# MESSAGE_NEED_CONCRETE
+Sand: This is sand terrain.  Plenty of this stuff on Arrakis, to be sure.
+# MESSAGE_SAND
+Sand Dunes: These are an ubiquitous feature of Arrakian landscape.
+# MESSAGE_DUNE
+Rock: This is rock terrain.  This valuable terrain is the only place structures can be built.
+# MESSAGE_ROCK
+Mountain: Mountains on Arrakis are rare (and an inconvenience).
+# MESSAGE_MOUNT
+Spice Field: This is the Spice, Melange.  It is the most precious substance in the universe.
+# MESSAGE_SPICE
+Structures must be placed on clear rock or concrete and adjacent to another friendly structure.
+# MESSAGE_ADJACENT
+Search for spice fields to harvest.
+# MESSAGE_SEARCH4SPICE
+Warning: Sandworms (Shai-Hulud) roam Dune devouring anything on the sand.
+# MESSAGE_SANDWORM

@@ -1,0 +1,114 @@
+Burn version with new setup/install and scenario files.
+
+) I've noticed that the Tiberium "tiles" are skragging in the         
+multiplayer mode.  Skragging= a "tile" of random colored pixels.
+It happened everytime I would scroll to the bottom and there was    
+still tiberium on the field, but also, just as I would scroll       
+around.
+
+) Vehicles still cross over each other when they are moving.
+
+) I think you should be able to click a tile partially full of        
+infantry if the selected unit is an infantry. (e.g. if you have 3   
+infantry in a square, you should be able to select 2 infantry and   
+be able to click in the square where the 3 are.)  If you select     
+more than 2 infantry, the remainder should just move as close as    
+possible...
+
+) When multiple units are selected and sent to a location, 1 or 2     
+never go on the first try.  I suggest that those who can't find     
+there destination try to get as close as possible to it. 
+
+) The game currently pauses anytime any player gets a new score.      
+This turns into repeated "lockup scares" when the player is playing three other people. 
+If we can't solve this problem, perhaps we should give each player  
+a sound track and never load a new one.
+
+) The game bogs down when multiple people are scrolling around.
+
+) Right now, there is no message when a player has been wiped off the 
+map.  Should this be an EVA thing or on screen text? I think both.
+
+) There is also no "You have won!" message.  This should be EVA and   
+text as well.
+
+"RUNGAME.EXE" to be renamed to so that it is clear what the player should
+type to run the game. Possibly rename to "utility.exe".
+
+Install new multiplayer EVA speech. Disable enemy destroyed EVA speech
+when in multiplayer mode.
+
+Install new VQ movies.
+
+Merge with Barry to incorporate map/score screen changes.
+
+Install these samples:
+REPAIR2.WAV        use when vehicle goes on repair ppad. 
+RADAR2.WAV         use when radar kicks in.
+
+Track down Watcom debug problem. Call Tech Rep
+
+There is a bug with radar in that it doesn't update enough
+for fast moving units.
+
+Fix so that harvester returns to Tiberium field after unloading.
+
+Add pause option to game (for network play)?
+
+Prevent placement of buildings off the edge of the map. Especially
+critical for the Weapons factory.
+
+Purple tiberium color on radar map.
+
+Fix bug with why bases aren't being built by the computer.
+
+Increase delay for "end of game check" from 20 seconds to 30 seconds.
+
+Teams arriving by Chinook are not following waypoints.  
+They will go into Guard upon exiting the helicopter. Fix this.
+
+Find a solution for:
+Chinooks only fly to the Reinforcement cell.  
+This presents the problem of not being able to bring in troops for the 
+player, or not having GDI drop troops by helicopter.
+
+Allow creation of Civilian Teams.
+
+Check up on the problems with the "ambush" team order. What is it really
+supposed to do?
+
+Fix rocks passibility problems in the desert set.
+
+Attack cycle should carry a weak machine gun weapon.
+
+Enemy tanks should drive over infantry if they are very close rather than
+merely attacking them with firepower.
+
+Fix problem with harvester driving over the backside of the refinery -- it looks bad.
+
+Install two or four small transition scores to reside on the hard drive.
+
+Control the transition score from the INI file.
+
+Allow control of the sidebar by way of a trigger event. This will allow certain
+scenarios to force the sidebar to be disabled until an event occurs.
+
+Factories should produce what they originally would produced when constructed, NOT
+restricted to what the current owner can produce. This will allow capturing of
+a factory so that, otherwise unavailable, units could be produced.
+
+Show percentage full graphic for the harvester.
+
+Stealth tank cloaking and decloaking problems.
+
+Graphic icon glitches on the radar map.
+
+
+
+
+
+
+
+
+
+

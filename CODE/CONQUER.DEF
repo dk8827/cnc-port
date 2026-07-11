@@ -1,0 +1,11 @@
+NAME           CONQUER
+DESCRIPTION    'Command and Conquer for Windows 95'
+EXETYPE        WINDOWS
+
+IMPORTS
+	DirectDrawCreate=DDRAW.DirectDrawCreate
+        IID_IDirectDraw2=DDRAW.IID_IDirectDraw2
+	DirectSoundCreate=DSOUND.DirectSoundCreate
+	DirectPlayEnumerate=DPLAY.DirectPlayEnumerate
+        DirectPlayCreate=DPLAY.DirectPlayCreate
+
