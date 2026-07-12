@@ -520,7 +520,7 @@ void Move_Point(short &x, short &y, register DirType dir, unsigned short distanc
 	_DX = _AX;
 	x += _DX;
 #else
-	x += calcx(CosTable[dir], distance);
+	x += calcx(CosTable[(unsigned char)dir], distance);
 #endif
 //	asm add [word ptr start],ax
 
@@ -538,7 +538,7 @@ void Move_Point(short &x, short &y, register DirType dir, unsigned short distanc
 	_DX = _AX;
 	y += _DX;
 #else
-	y += calcy(SinTable[dir], distance);
+	y += calcy(SinTable[(unsigned char)dir], distance);
 #endif
 //	asm add [word ptr start+2],ax
 
