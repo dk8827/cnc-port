@@ -111,7 +111,7 @@ void OverlayClass::Init(void)
 	Overlays.Free_All();
 
 	ptr = new OverlayClass();
-	VTable = ((void **)(((char *)ptr) + sizeof(AbstractClass) - 4))[0];
+	VTable = Get_VTable(ptr, sizeof(AbstractClass));
 	delete ptr;
 }
 

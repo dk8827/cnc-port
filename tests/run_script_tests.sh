@@ -334,6 +334,16 @@ trap 'rm -rf "$tmpdir"' EXIT
   "$ROOT_DIR/tests/move_point_direction_oob_test.cpp" "$ROOT_DIR/CODE/COORD.CPP" -Wl,-dead_strip -o "$tmpdir/move_point_direction_oob_test"
 "$tmpdir/move_point_direction_oob_test"
 
+"${CXX:-c++}" -std=gnu++98 -ffunction-sections -fdata-sections -DENGLISH -DGAME_VERSION=0x00030003 -DINTERNET_OFF -DTRUE_FALSE_DEFINED -DVQADIRECT_SOUND=1 -DWIN32 -D_WINDOWS \
+  -I"$ROOT_DIR/PORT/MAC/include" -I"$ROOT_DIR/WIN32LIB/INCLUDE" -I"$ROOT_DIR/WIN32LIB/KEYBOARD" \
+  -I"$ROOT_DIR/WIN32LIB/DRAWBUFF" -I"$ROOT_DIR/WIN32LIB/IFF" -I"$ROOT_DIR/WIN32LIB/MISC" \
+  -I"$ROOT_DIR/WIN32LIB/MEM" -I"$ROOT_DIR/WIN32LIB/MONO" -I"$ROOT_DIR/WIN32LIB/TILE" \
+  -I"$ROOT_DIR/CODE" -I"$ROOT_DIR/CODE/ENG" -I"$ROOT_DIR/WINVQ/INCLUDE" \
+  -I"$ROOT_DIR/WINVQ/INCLUDE/VQM32" -I"$ROOT_DIR/WINVQ/INCLUDE/WWLIB32" \
+  -Wno-nonportable-include-path -Wno-deprecated-declarations -Wno-unknown-pragmas \
+  "$ROOT_DIR/tests/save_vtable_lp64_test.cpp" "$ROOT_DIR/CODE/SAVELOAD.CPP" -Wl,-dead_strip -o "$tmpdir/save_vtable_lp64_test"
+"$tmpdir/save_vtable_lp64_test"
+
 "${CXX:-c++}" -std=gnu++98 "$ROOT_DIR/tests/radar_icon_offset_width_test.cpp" -o "$tmpdir/radar_icon_offset_width_test"
 (cd "$ROOT_DIR" && "$tmpdir/radar_icon_offset_width_test")
 

@@ -971,7 +971,7 @@ bool Read_Object(void *ptr, int base_size, int class_size, FileClass & file, voi
 	**	Fill in VTable.
 	*/
 	if (vtable) {
-		((void **)(((char *)ptr) + base_size - 4))[0] = vtable;
+		Set_VTable(ptr, base_size, vtable);
 	}
 
 	return(true);
@@ -1199,7 +1199,16 @@ TechnoTypeClass const * Target_To_TechnoType(TARGET target)
  *=========================================================================*/
 void * Get_VTable(void *ptr, int base_size)
 {
+#if defined(__WATCOMC__)
 	return(((void **)(((char *)ptr) + base_size - 4))[0]);
+#else
+	void *vtable;
+
+	/* Current C++ ABIs store the primary vptr at the start of the object. */
+	(void)base_size;
+	memcpy(&vtable, ptr, sizeof(vtable));
+	return(vtable);
+#endif
 }
 
 
@@ -1222,7 +1231,13 @@ void * Get_VTable(void *ptr, int base_size)
  *=========================================================================*/
 void Set_VTable(void *ptr, int base_size, void *vtable)
 {
+#if defined(__WATCOMC__)
 	((void **)(((char *)ptr) + base_size - 4))[0] = vtable;
+#else
+	/* memcpy avoids an unaligned void ** store on 64-bit targets. */
+	(void)base_size;
+	memcpy(ptr, &vtable, sizeof(vtable));
+#endif
 }
 
 
@@ -1389,4 +1404,3 @@ void Dump(void)
 	fclose(fp);
 }
 #endif
-

@@ -574,7 +574,7 @@ void BulletClass::Init(void)
 	Bullets.Free_All();
 
 	ptr = new BulletClass();
-	VTable = ((void **)(((char *)ptr) + sizeof(AbstractClass) - 4))[0];
+	VTable = Get_VTable(ptr, sizeof(AbstractClass));
 	delete ptr;
 }
 
