@@ -334,6 +334,9 @@ trap 'rm -rf "$tmpdir"' EXIT
   "$ROOT_DIR/tests/move_point_direction_oob_test.cpp" "$ROOT_DIR/CODE/COORD.CPP" -Wl,-dead_strip -o "$tmpdir/move_point_direction_oob_test"
 "$tmpdir/move_point_direction_oob_test"
 
+"${CXX:-c++}" -std=gnu++98 "$ROOT_DIR/tests/radar_icon_offset_width_test.cpp" -o "$tmpdir/radar_icon_offset_width_test"
+(cd "$ROOT_DIR" && "$tmpdir/radar_icon_offset_width_test")
+
 "${CXX:-c++}" -std=gnu++98 -DENGLISH -DGAME_VERSION=0x00030003 -DINTERNET_OFF -DTRUE_FALSE_DEFINED -DVQADIRECT_SOUND=1 -DWIN32 -D_WINDOWS \
   -I"$ROOT_DIR/PORT/MAC/include" -I"$ROOT_DIR/WIN32LIB/INCLUDE" -I"$ROOT_DIR/WIN32LIB/KEYBOARD" \
   -I"$ROOT_DIR/WIN32LIB/DRAWBUFF" -I"$ROOT_DIR/WIN32LIB/IFF" -I"$ROOT_DIR/WIN32LIB/MISC" \
