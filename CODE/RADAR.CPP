@@ -809,7 +809,7 @@ void RadarClass::Plot_Radar_Pixel(CELL cell)
 		if (color == TBLACK) {
 			if (ZoomFactor > 1) {
 				void const *ptr;
-				long offset;
+				int32_t offset;	// icon-set header stores 32-bit offsets; must not be 8-byte long on LP64
 				int icon;
 
 				if (cellptr->TType != TEMPLATE_NONE) {
